@@ -23,15 +23,13 @@ module.exports = {
             id: message.id,
             text: text || message.text,
             time: message.time
-    };
-
-    res.status(200).send( messages );
+        }
+        res.status(200).send( messages )
     },
-
     delete: ( req, res ) => {
         const deleteID = req.params.id;
         messageIndex = messages.findIndex( message => message.id == deleteID );
-        messages.splice(messageIndex, 1);
-        res.status(200).send( messages );
+        messages.splice( messageIndex, 1);
+        res.status(200).send(messages)
     }
 };
